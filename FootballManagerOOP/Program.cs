@@ -16,7 +16,11 @@ namespace FootballManagerOOP
             Fenerbahce fenerbahçe = new Fenerbahce(fbFootballers);
             Galatasaray galatasaray = new Galatasaray(gsFootballers);
 
-            fenerbahçe.Match(fenerbahçe, galatasaray);
+            for (int i = 0; i < 10; i++)
+            {
+                fenerbahçe.Match(fenerbahçe, galatasaray);
+                Console.WriteLine();
+            }
 
         }
 
