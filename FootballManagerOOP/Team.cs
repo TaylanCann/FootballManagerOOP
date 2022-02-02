@@ -46,16 +46,23 @@ namespace FootballManagerOOP
             int homeXG = 0, awayXG = 0; // Gol Beklentisi
             int homeScore = 0, awayScore = 0; //Skorlar
 
+            int homeRnd=0, homePoint=0,awayRnd=0, awayPoint=0;
+
             //Because of match is 90 minutes
             for (int i = 0; i < 89; i++)
             {
-                Random rnd = new Random();
-                int homeRnd = rnd.Next(1, home.Overall + 1);
-                int homePoint = home.Overall * homeRnd;
 
-                Random rnd2 = new Random();
-                int awayRnd = rnd2.Next(1, away.Overall+ 1);
-                int awayPoint = away.Overall * awayRnd;
+                for (int j = 0; j < 59; j++)
+                {
+                    Random rnd = new Random();
+                    homeRnd = rnd.Next(1, home.Overall + 1);
+                    homePoint = home.Overall * homeRnd;
+
+                    Random rnd2 = new Random();
+                    awayRnd = rnd2.Next(1, away.Overall + 1);
+                    awayPoint = away.Overall * awayRnd;
+                }
+                
 
                 if (homePoint > awayPoint)
                 {
@@ -66,7 +73,7 @@ namespace FootballManagerOOP
                     awayXG++;
                 }
 
-                if (homeXG>=10)
+                if (homeXG >= 15)
                 {
                     Random rndSayi = new Random();
                     int sayi = rndSayi.Next(3);
@@ -76,8 +83,7 @@ namespace FootballManagerOOP
                     }
                     homeXG = 0;
                 }
-
-                if (awayXG >= 10)
+                else if (awayXG >= 15)
                 {
                     Random rndSayi = new Random();
                     int sayi = rndSayi.Next(3);
