@@ -81,7 +81,7 @@ namespace FootballManagerOOP
                     {
                         homeScore++;
                     }
-                    homeXG = 0;
+                    homeXG = 0; 
                 }
                 else if (awayXG >= 15)
                 {
